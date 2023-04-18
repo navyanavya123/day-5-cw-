@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+union Rectangle {
+    int length;
+    int width;
+};
+
+int area(union Rectangle rect) {
+    return rect.length * rect.width;
+}
+
+int main() {
+    union Rectangle rect;
+    rect.length = 5;
+    rect.width = 10;
+    int a = area(rect);
+    printf("Area of rectangle is: %d\n", a);
+    return 0;
+}
