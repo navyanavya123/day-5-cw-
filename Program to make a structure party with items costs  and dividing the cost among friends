@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Party {
+  int numGuests;
+  float foodCost;
+  float drinkCost;
+  float decorCost;
+  float totalCost;
+};
+
+int main() {
+  struct Party party;
+
+  // Get user input
+  printf("Enter the number of guests: ");
+  scanf("%d", &party.numGuests);
+
+  printf("Enter the cost of food per person: ");
+  scanf("%f", &party.foodCost);
+
+  printf("Enter the cost of drinks per person: ");
+  scanf("%f", &party.drinkCost);
+
+  printf("Enter the cost of decorations: ");
+  scanf("%f", &party.decorCost);
+
+  // Calculate total cost
+  party.totalCost = party.numGuests * (party.foodCost + party.drinkCost) + party.decorCost;
+
+  // Print the results
+  printf("\nParty Details\n");
+  printf("Number of guests: %d\n", party.numGuests);
+  printf("Food cost per person: $%.2f\n", party.foodCost);
+  printf("Drink cost per person: $%.2f\n", party.drinkCost);
+  printf("Decorations cost: $%.2f\n", party.decorCost);
+  printf("Total cost: $%.2f\n", party.totalCost);
+
+  return 0;
+}
